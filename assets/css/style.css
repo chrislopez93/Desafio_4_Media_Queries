@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 1fr 1fr 5fr 1fr;
+  grid-template-areas:
+    "header"
+    "search"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: red;
+}
+.search {
+  grid-area: search;
+  background-color: yellow;
+}
+
+main {
+  grid-area: main;
+  background-color: brown;
+}
+
+footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+/*Comienzo Resolución: 576px Móvil*/
+
+@media (max-width: 575px) {
+  .grid_container {
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-areas:
+      "header"
+      "search"
+      "main"
+      "footer";
+  }
+}
+/*Fin Resolución: 576px Móvil*/
+
+/*Comienzo Resolución: 922px Tablet*/
+@media (min-width: 576px) {
+  .grid_container {
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas:
+      "header header"
+      "search main"
+      "footer footer";
+  }
+}
+/*Fin Resolución: 992px Tablet*/
+
+/* Comienzo Resolución: 1280px PC*/
+
+@media (min-width: 1280px) {
+  .grid_container {
+    grid-template-columns: 2fr 10fr 1fr;
+    grid-template-rows: 2fr 20fr 2fr;
+    grid-template-areas:
+      "header search search"
+      "header main main"
+      "footer main main";
+  }
+}
+/*Fin Resolución: 1280px PC*/
