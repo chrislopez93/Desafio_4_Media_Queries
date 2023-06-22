@@ -16,28 +16,60 @@
 
 header {
   grid-area: header;
-  background-color: red;
+  background-color: #00579C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
 }
+
+.electric_car, .nav_bar{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.electric_car ul li, .nav_bar li {
+  list-style: none;
+  margin: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+
+}
+
+.electric_car ul li a, .nav_bar li a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.fa-solid{
+  margin: 5px;
+}
+
 .search {
   grid-area: search;
-  background-color: yellow;
+  background-color: #E2E2E2;
+  display: flex;
+  justify-content: center;
 }
 
 main {
   grid-area: main;
-  background-color: brown;
+  background-color: #FFFFFF;
+
 }
 
-footer {
+footer{
   grid-area: footer;
-  background-color: blue;
+  background-color: #012F6B;
+
 }
 
 /*Comienzo Resolución: 576px Móvil*/
 
 @media (max-width: 575px) {
   .grid_container {
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 5fr 1fr;
     grid-template-areas:
       "header"
@@ -45,11 +77,14 @@ footer {
       "main"
       "footer";
   }
+  .header nav{
+    display: none;
+  }
 }
 /*Fin Resolución: 576px Móvil*/
 
 /*Comienzo Resolución: 922px Tablet*/
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .grid_container {
     grid-template-columns: 1fr 10fr;
     grid-template-rows: 1fr 5fr 1fr;
