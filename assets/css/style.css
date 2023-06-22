@@ -28,13 +28,13 @@ header {
   height: 8vh;
 }
 
-.electric_car, .nav_bar{
+.electric_car, .nav_bar, .footer_icon{
   display: flex;
   align-items: center;
   margin-right: 20px;
 }
 
-.electric_car ul li, .nav_bar li {
+.electric_car ul li, .nav_bar li, .footer_icon li {
   list-style: none;
   margin: 15px;
   /* font-weight: 600; */
@@ -69,7 +69,7 @@ header {
 }
 
 select{
-  border: 1px solid black;
+  border: 1px solid #cacaca;
   font-size: 1rem;
   border-radius:5px;
   width: 200px;
@@ -81,15 +81,65 @@ select{
 main {
   grid-area: main;
   background-color: #FFFFFF;
-  height: 76vh;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow-y: scroll; */
+  overflow-y: auto;
+  flex-direction: column;
 }
+
+.product_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #cacaca;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.product{
+  width: 300px;
+}
+
+.btn_more{
+  background-color:#00579C;
+  color: #FFFFFF;
+  border: 1px solid #00579C;
+  font-size: 1rem;
+  border-radius:5px;
+  width: 100px;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+
 
 footer{
   grid-area: footer;
   background-color: #012F6B;
   height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom:  15px;
 }
+
+footer p{
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.fa-brands{
+  color: #FFFFFF;
+}
+
 
 /*Comienzo Resolución: 576px Móvil*/
 
