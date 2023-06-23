@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-body{
+body {
   font-family: Montserrat;
   background-color: red;
 }
@@ -11,7 +11,7 @@ body{
 .grid_container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "header"
     "search"
@@ -21,57 +21,66 @@ body{
 
 header {
   grid-area: header;
-  background-color: #00579C;
+  background-color: #00579c;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 8vh;
+  height: 5vh;
 }
 
-.electric_car, .nav_bar, .footer_icon{
+.electric_car,
+.nav_bar,
+.footer_icon {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
-.electric_car ul li, .nav_bar li, .footer_icon li {
+.electric_car ul li,
+.nav_bar li,
+.footer_icon li,
+.list_search li,
+.page_explorer li{
   list-style: none;
-  margin: 15px;
-  /* font-weight: 600; */
-  font-size: 1rem;
-
+  margin: 10px;
+  font-size: 1.2rem;
 }
 
-.electric_car ul li a, .nav_bar li a{
+.electric_car ul li a,
+.nav_bar li a{
   color: #ffffff;
   text-decoration: none;
 }
 
-.fa-solid{
+.fa-solid {
   margin: 5px;
 }
 
 .search {
   grid-area: search;
-  background-color: #E2E2E2;
+  background-color: #e2e2e2;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items:center;
-  height: 8vh;
-  
+  align-items: center;
+  height:5vh;
 }
 
-.search p{
+.search p {
   font-weight: 500;
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
-select{
+.list_search a, .page_explorer a{
+  text-decoration: none;
+  color: #000000;
+}
+
+select {
   border: 1px solid #cacaca;
   font-size: 1rem;
-  border-radius:5px;
+  border-radius: 5px;
   width: 200px;
   padding: 7px;
   background-color: #ffffff;
@@ -80,16 +89,16 @@ select{
 
 main {
   grid-area: main;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow-y: scroll; */
-  overflow-y: auto;
+  overflow-y: scroll;
   flex-direction: column;
+  height: 85vh;
 }
 
-.product_container{
+.product_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,49 +110,65 @@ main {
   border: 1px solid #cacaca;
   padding: 10px;
   border-radius: 5px;
+  background-color: #ffffff;
 }
 
-.product{
+.product {
   width: 300px;
 }
 
-.btn_more{
-  background-color:#00579C;
-  color: #FFFFFF;
-  border: 1px solid #00579C;
+.btn_more {
+  background-color: #00579c;
+  color: #ffffff;
+  border: 1px solid #00579c;
   font-size: 1rem;
-  border-radius:5px;
+  border-radius: 5px;
   width: 100px;
   padding: 7px;
   margin-top: 5px;
 }
 
+.page_explorer{
+  display: flex;
+  justify-content:center;
+  margin-bottom: 5px;
+}
+
+.page_explorer li{
+  border: 1px solid #cacaca;
+  margin: 0;
+  padding: 10px;
+}
+
+.page_explorer li a{
+  font-weight: 500;
+  color:#00579c;
+}
 
 
-footer{
+footer {
   grid-area: footer;
-  background-color: #012F6B;
-  height: 8vh;
+  background-color: #012f6b;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom:  15px;
+  padding-bottom: 15px;
 }
 
-footer p{
-  color: #FFFFFF;
+footer p {
+  color: #ffffff;
   font-weight: 500;
 }
 
-.fa-brands{
-  color: #FFFFFF;
+.fa-brands {
+  color: #ffffff;
 }
 
 
 /*Comienzo Resolución: 576px Móvil*/
-
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .grid_container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -153,28 +178,43 @@ footer p{
       "main"
       "footer";
   }
-  .header nav{
+  .header nav {
     display: none;
   }
-
+  .list_search{
+    display: none;
+  }
 }
 /*Fin Resolución: 576px Móvil*/
 
-/*Comienzo Resolución: 922px Tablet*/
-@media (min-width: 992px) {
+/*Comienzo Resolución: Tablet*/
+@media (min-width: 577px) and (max-width: 767px) {
   .grid_container {
     grid-template-columns: 1fr 10fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 3fr;
     grid-template-areas:
       "header header"
       "search main"
       "footer footer";
   }
+  .search {
+    width: 25vw;
+    height: 100%;
+  }
+  main {
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    overflow-y: scroll;
+  }
+  .list_form{
+    display: none;
+  }
 }
 /*Fin Resolución: 992px Tablet*/
 
 /* Comienzo Resolución: 1280px PC*/
-
+/* 
 @media (min-width: 1280px) {
   .grid_container {
     grid-template-columns: 2fr 10fr 1fr;
@@ -185,4 +225,4 @@ footer p{
       "footer main main";
   }
 }
-/*Fin Resolución: 1280px PC*/
+Fin Resolución: 1280px PC */
